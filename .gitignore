@@ -1,0 +1,4 @@
+dist
+build
+shell_cmd.egg-info
+shell_cmd/__pycache__
