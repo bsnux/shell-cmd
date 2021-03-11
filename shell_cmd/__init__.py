@@ -5,6 +5,10 @@ class RunShellException(Exception):
     pass
 
 
+def __version__():
+    print('1.0.2')
+
+
 def sh(cmd, output_list=False):
     '''
     Returns a string or list with the result of executing given shell command
@@ -22,6 +26,6 @@ def sh(cmd, output_list=False):
         output = check_output(cmd, shell=True).decode('utf-8')
         if output_list:
             output = output.split('\n')[:-1]
-    except CalledProcessError as run_shell_exception:
-        raise RunShellException from run_shell_exception
+    except CalledProcessError:
+        raise RunShellException
     return output
